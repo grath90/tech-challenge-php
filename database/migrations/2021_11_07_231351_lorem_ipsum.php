@@ -13,7 +13,13 @@ class LoremIpsum extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('lorem_ipsum', function (Blueprint $table) {
+          $table->id();
+          $table->text('lorem_paragraph');
+          $table->string('lorem_title');
+          $table->text('image_url');
+          $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class LoremIpsum extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('lorem_ipsum');
     }
 }

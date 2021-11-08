@@ -13,7 +13,15 @@ class FormContent extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('form_content', function(Blueprint $table) {
+          $table->string('email');
+          $table->string('first_name');
+          $table->string('last_name');
+          $table->text('message');
+          $table->timestamps();
+
+          $table->primary('email');
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ class FormContent extends Migration
      */
     public function down()
     {
-        //
+        Schema::drop('form_content');
     }
 }
