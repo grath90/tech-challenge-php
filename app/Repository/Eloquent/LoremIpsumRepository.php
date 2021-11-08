@@ -2,7 +2,7 @@
 
 namespace App\Repository\Eloquent;
 
-use App\Model\LoremIpsum;
+use App\Models\LoremIpsum;
 use App\Repository\LoremIpsumRepositoryInterface;
 use Illuminate\Support\Collection;
 
@@ -18,11 +18,10 @@ class LoremIpsumRepository extends BaseRepository implements LoremIpsumRepositor
     parent::__construct($model);
   }
 
-  /**
-   * @return Collection
-   */
-  public function all(): Collection
+  public function getSection($section_id)
   {
-    return $this->model->all();
+    $content = $this->model->where('section_id', $section_id)->get();
+
+    return $content;
   }
 }

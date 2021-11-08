@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository\LoremIpsumRepositoryInterface;
+
 class LoremIpsumController extends Controller
 {
   private $loremIpsumRepository;
@@ -11,10 +13,10 @@ class LoremIpsumController extends Controller
     $this->loremIpsumRepository = $loremIpsumRepository;
   }
 
-  public function getContentForPath()
+  public function getContentForPath($section_id)
   {
-    $loremIpsum = $this->loremIpsumRepository->find('');
-
+    $loremIpsum = $this->loremIpsumRepository->getSection($section_id);
+    
     return $loremIpsum;
   }
 }

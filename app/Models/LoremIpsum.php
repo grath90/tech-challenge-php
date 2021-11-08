@@ -26,5 +26,6 @@ class LoremIpsum extends Model
       'lorem_paragraph',
       'lorem_title',
       'image_url',
+      'section_id',
     ]; 
 }

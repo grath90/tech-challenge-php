@@ -13,10 +13,12 @@ class LoremIpsumFactory extends Factory
      */
     public function definition()
     {
+      $section_ids = ['home', 'contact', 'box'];
         return [
             'lorem_paragraph' => $this->faker->paragraph(4),
             'lorem_title' => $this->faker->sentence(),
             'image_url' => $this->faker->url(),
+            'section_id' => $this->faker->randomElement($section_ids),
         ];
     }
 }

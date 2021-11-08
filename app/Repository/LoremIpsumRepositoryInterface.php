@@ -2,10 +2,10 @@
 
 namespace App\Repository;
 
-use App\Model\LoremIpsum;
+use App\Models\LoremIpsum;
 use Illuminate\Support\Collection;
 
 interface LoremIpsumRepositoryInterface
 {
-  public function find(): ?Model;
+  public function getSection($section_id);
 }

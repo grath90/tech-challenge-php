@@ -10,6 +10,12 @@ class FormContent extends Model
     use HasFactory;
 
     /**
+     * Table name
+     * @var string
+     */
+    protected $table = 'form_content';
+
+    /**
      * Primary key for table.
      * @var string
      */

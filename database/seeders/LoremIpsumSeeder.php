@@ -15,7 +15,7 @@ class LoremIpsumSeeder extends Seeder
     public function run()
     {
       LoremIpsum::factory()
-                  ->count(10)
+                  ->count(12)
                   ->create();
     }
 }
