@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repository\FormContentRepositoryInterface;
-use \Exception;
+use Exception;
 
 class FormContentController extends Controller
 {
@@ -18,7 +18,13 @@ class FormContentController extends Controller
   {
     try {
       if (!array_key_exists('email', $data)) {
-        throw new Exception('email is required');
+        throw new Exception('Email is required!');
+      }
+
+      $exists = $this->repository->find($data['email']);
+
+      if ($exists) {
+        throw new Exception('User has already submitted a contact form.');
       }
 
       $this->repository->create($data);
